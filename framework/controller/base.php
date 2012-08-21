@@ -12,7 +12,7 @@ class Base {
 		// see if this controller has a matching view. else load the default
 		// base view.
 
-		$vclass = str_replace('Controller','View',get_class($this));
+		$vclass = str_replace('\\Controller\\','\\View\\',get_class($this));
 
 		if(class_exists($vclass,true)) $view = new $vclass($this);
 		else $view = new \Framework\View\Base($this);
